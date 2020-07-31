@@ -1,0 +1,58 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>
+        {{items.title}}
+        | Foodfy</title>
+    <link rel="stylesheet" href="recipe-description.css">
+{% endblock head%}
+
+{% block content %}
+
+    <section class="recipe">
+        <div class="img-recipe">
+            <img src="https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/{{items.id}}.png" alt="{{items.title}}">
+        </div>
+        <div class="title-recipe">
+            <h3>{{items.title}}</h3>
+            <p>por{{items.author}}</p>
+        </div>
+
+        <div class="card-information-recipe">
+            <div class="ingredients">
+                <div class="title_and_button">
+                    <h4>Ingredientes</h4>
+                    <button class="btn-toggle">ESCONDER</button>
+                </div>
+                <div class="content show">
+                    {% for ingredient in items.ingredients%}
+                        <li>{{ingredient}}</li>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="preparation">
+                <div class="title_and_button">
+                    <h4>Modo de preparo</h4>
+                    <button class="btn-toggle">ESCONDER</button>
+                </div>
+                <div class="content show">
+                    {% for prepare in items.preparation%}
+                        <li>{{prepare}}</li>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="information show">
+                <div class="title_and_button">
+                    <h4>Informações Adcionais</h4>
+                    <button class="btn-toggle">ESCONDER</button>
+                </div>
+                <div class="content">
+                    {{items.information}}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="scriptDescription.js"></script>
+
+{% endblock %}

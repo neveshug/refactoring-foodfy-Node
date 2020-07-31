@@ -1,0 +1,27 @@
+.first-cards,
+.title{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    width: 800px;
+    margin: 10px auto;
+}
+
+.title h3{
+    font-size: 34px;
+    text-align: left;
+    font-weight: bold;
+    padding: 30px 0 30px 0;
+}
+
+.first-cards .card-only img{
+    width: 100%;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.author{
+    font-size: 16px;
+    color: #777;
+}
+
